@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ToDoList.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 
 export default function ToDoList() {
@@ -540,7 +540,7 @@ export default function ToDoList() {
     return (
         <>
             <nav className="">
-                <a className="bg-green-300 mt-8 ml-12 inline-block text-xl p-3 font-bold hover:scale-125 transition-transform rounded-xl" href="/">Home Page</a>
+                <Link className="bg-green-300 mt-8 ml-12 inline-block text-xl p-3 font-bold hover:scale-125 transition-transform rounded-xl" to="/">Home Page</Link>
             </nav>
 
 

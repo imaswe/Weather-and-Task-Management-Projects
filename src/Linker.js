@@ -19,7 +19,7 @@ function Linker() {
 
 export default function Main() {
     return (
-        <Router>
+        <Router basename="/Weather-and-Task-Management-Projects">
             <Linker />
         </Router>
     );

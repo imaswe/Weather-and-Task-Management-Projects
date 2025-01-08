@@ -5,6 +5,7 @@ import clearSky from "./images/clearSky.webp";
 import cloudsSky from "./images/cloudsSky.png";
 import rainSky from "./images/rainSky.webp";
 import snowSky from "./images/snowSky.png";
+import { Link } from "react-router-dom";
 
 
 export default function Weather() {
@@ -880,7 +881,7 @@ export default function Weather() {
     return (
         <>
             <nav className="mt-10">
-                <a className="inline-block duration-300 transition-transform hover:scale-125 bg-blue-400 text-xl p-4 ml-10 font-bold text-shadow-white" href="/">Home Page</a>
+                <Link className="inline-block duration-300 transition-transform hover:scale-125 bg-blue-400 text-xl p-4 ml-10 font-bold text-shadow-white" to="/">Home Page</Link>
             </nav>
 
             <h1 onMouseEnter={() => setIconGlow(true)} onMouseLeave={() => setIconGlow(false)} className="py-5 shadow-cyan-500 shadow-lg bg-gradient-to-r from-white/50 to-gray-400/50 rounded-full mt-5 text-4xl text-center text-blue-500 text-shadow-black">
@@ -895,11 +896,11 @@ export default function Weather() {
 
                     <div className="flex flex-col bg-white bg-opacity-50 h-[1000px]">
 
-                        <label className="font-bold text-xl border-dashed border-4 border-white p-4 my-3" for="citySearch">Search By City</label>
+                        <label className="font-bold text-xl border-dashed border-4 border-white p-4 my-3" htmlFor="citySearch">Search By City</label>
                         <input onKeyUp={handleChange} onChange={handleChange} value={citySearch} className="text-xl border-4 border-green-900 p-4 my-3" id="citySearch" placeholder="Input City Name"/>
                         <button onClick={() => handleWeatherSearch(citySearch, "citySearch")} className="border-4 border-black bg-gray-400 py-3 hover:bg-gray-200 duration-300 font-bold text-xl">Search Weather</button>
                       
-                        <label className="font-bold text-xl border-dashed border-4 border-white p-4 my-3" for="geoLat">Search By Geographic Coordinates <br /> <span className="text-red-500 text-shadow-black">&#10071;Please input POSITIVE values ONLY&#10071;</span> <br /> Maximum Latitude: 90 <br /> Maximum Longitude: 180</label>
+                        <label className="font-bold text-xl border-dashed border-4 border-white p-4 my-3" htmlFor="geoLat">Search By Geographic Coordinates <br /> <span className="text-red-500 text-shadow-black">&#10071;Please input POSITIVE values ONLY&#10071;</span> <br /> Maximum Latitude: 90 <br /> Maximum Longitude: 180</label>
                         <div className="flex flex-row space-x-4 border-4">
                             <input onKeyUp={handleChange} value={geoSearch.lat} onChange={handleChange} id="geoLat" className="text-xl border-4 border-green-900 p-4 my-3" placeholder="Input Latitude" />
                             <button className={`${directions.north === true ? "bg-green-500" : "bg-black"} text-white font-bold text-xl my-3 p-4 ${directions.north === true ? "" : "hover:bg-gray-600"} transition-colors duration-300`} onClick={handleDirections}>North</button>
@@ -914,7 +915,7 @@ export default function Weather() {
 
                         <button id="geoSearch" onClick={handleChange} className="border-4 border-black bg-gray-400 py-3 hover:bg-gray-200 duration-300 font-bold text-xl">Search Weather</button>
 
-                        <label className="font-bold text-xl border-dashed border-4 border-white p-4 my-3" for="zipSearch">Search By Zip Code (US Locations Only)</label>
+                        <label className="font-bold text-xl border-dashed border-4 border-white p-4 my-3" htmlFor="zipSearch">Search By Zip Code (US Locations Only)</label>
                         <input onKeyUp={handleChange} onChange={handleChange} value={zipCode} id="zipSearch" className="text-xl border-4 border-green-900 p-4 my-3" placeholder="Input Zip Code" />
                         <button onClick={() => handleWeatherSearch(zipCode, "zipSearch")} className="border-4 border-black bg-gray-400 py-3 hover:bg-gray-200 duration-300 font-bold text-xl">Search Weather</button>
 

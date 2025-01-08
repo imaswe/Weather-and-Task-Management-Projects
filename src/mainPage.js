@@ -25,20 +25,18 @@ export default function MainPage() {
         // different navigation components based on the text content 
         switch(e.target.textContent) {
             case "To Do List":
-                console.log("To Do List");
                 link("/ToDoList");
                 break;
             case "Weather":
-                console.log("Weather app!!");
                 link("/Weather");
                 break;
             default:
-                console.log("GG");
                 break;
         }
 
     }
 
+    
     // Main Page Component 
     return (
             <>
