@@ -10,7 +10,8 @@ function Linker() {
     return (
             <Routes>
                 <Route path="/" element={<MainPage />} />
-                <Route path="/ToDoList" element={<ToDoList />} />
+                {/* <Route path="/ToDoList" element={<ToDoList />} /> */}
+                <Route path="/ToDoList" Component={ToDoList} />
                 <Route path="/Weather" element={<Weather />} />
             </Routes>
     );
